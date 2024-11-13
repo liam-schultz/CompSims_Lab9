@@ -60,3 +60,13 @@ def solve():
 
     return rplot, xplot, tplot
 
+rplot, xplot, tplot = solve()
+
+#Figure 2
+snapshots = np.arange(0, 1501, 1500/6, dtype=int)
+snapshots[-1] = 1500
+
+for i in snapshots:
+    plt.plot(xplot, rplot[:, i])
+plt.legend([f"$\\rho(x,t)$ at $t={tplot[i]}$s" for i in snapshots])
+plt.show()
