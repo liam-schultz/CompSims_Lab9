@@ -55,15 +55,7 @@ def solve():
 
 rplot, xplot, tplot = solve()
 
-#Figure 2
-snapshots = np.arange(0, 1501, 1500/6, dtype=int)
-snapshots[-1] = 1500
-
-for i in snapshots:
-    plt.plot(xplot, rplot[:, i])
-plt.legend([f"$\\rho(x,t)$ at $t={tplot[i]}$s" for i in snapshots])
-plt.show()
-
+#Figure 1
 #* Graph contours of density versus position and time.
 levels = np.linspace(0., 1., num=11)
 ct = plt.contour(xplot, tplot, np.flipud(np.rot90(rplot)), levels)
@@ -71,4 +63,13 @@ plt.clabel(ct, fmt='%1.2f')
 plt.xlabel('x')
 plt.ylabel('time')
 plt.title('Density contours')
+plt.show()
+
+#Figure 2
+snapshots = np.arange(0, 1501, 1500/6, dtype=int)
+snapshots[-1] = 1500
+
+for i in snapshots:
+    plt.plot(xplot, rplot[:, i])
+plt.legend([f"$\\rho(x,t)$ at $t={tplot[i]}$s" for i in snapshots])
 plt.show()
