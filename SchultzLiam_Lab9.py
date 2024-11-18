@@ -19,16 +19,9 @@ def solve():
     cp = np.empty(N)
     cm = np.empty(N)
 
-    """# Initial condition is a square pulse from x = -L/4 to x = 0
-    rho = np.zeros(N)
-    for i in range(int(N / 4), int(N / 2)):
-        rho[i] = rho_max  # Max density in the square pulse
-
-    rho[int(N / 2)] = rho_max / 2  # Try running without this line"""
-
     #initial condition given in lab assignment description
     rho = np.zeros(N)
-    rho[:N//2] = rho_max
+    rho[N//4:N//2] = rho_max
 
     # Use periodic boundary conditions
     ip = np.arange(N) + 1
