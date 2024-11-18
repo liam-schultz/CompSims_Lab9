@@ -60,8 +60,8 @@ rplot, xplot, tplot = solve()
 levels = np.linspace(0., 1., num=11)
 ct = plt.contour(xplot, tplot, np.flipud(np.rot90(rplot)), levels)
 plt.clabel(ct, fmt='%1.2f')
-plt.xlabel('x')
-plt.ylabel('time')
+plt.xlabel('x (m)')
+plt.ylabel('time (s)')
 plt.title('Density contours')
 plt.show()
 
@@ -72,4 +72,7 @@ snapshots[-1] = 1500
 for i in snapshots:
     plt.plot(xplot, rplot[:, i])
 plt.legend([f"$\\rho(x,t)$ at $t={tplot[i]}$s" for i in snapshots])
+plt.title("Density of Cars vs Position for the Stoplight Problem for Various Times")
+plt.xlabel('x (m)')
+plt.ylabel('$\\rho(x,t)$ (cars/m)')
 plt.show()
