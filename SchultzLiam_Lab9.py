@@ -3,6 +3,12 @@ import matplotlib.pyplot as plt
 
 
 def solve():
+    """
+    Solves the one-dimensional traffic flow equation using the "1D wind" advection equation for the conditions given in\
+    the assignment description.
+    :return: A tuple including (A 2D array of densities at t and x, an array of x values corresponding to the positions\
+    in the aforementioned 2D array, an array of t values corresponding to the times in the aforementioned 2D array)
+    """
     # * Select numerical parameters (time step, grid spacing, etc.).
     N = 600 #number of grid points
     L = 1200.  # System size (meters)
