@@ -76,3 +76,9 @@ plt.title("Density of Cars vs Position for the Stoplight Problem for Various Tim
 plt.xlabel('x (m)')
 plt.ylabel('$\\rho(x,t)$ (cars/m)')
 plt.show()
+
+"""
+A shock front does form.
+It forms at t=0 and it forms because of high concentration of cars before the stoplight.
+The front propagates in the positive x direction.
+"""
