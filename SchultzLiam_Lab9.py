@@ -70,3 +70,12 @@ for i in snapshots:
     plt.plot(xplot, rplot[:, i])
 plt.legend([f"$\\rho(x,t)$ at $t={tplot[i]}$s" for i in snapshots])
 plt.show()
+
+#* Graph contours of density versus position and time.
+levels = np.linspace(0., 1., num=11)
+ct = plt.contour(xplot, tplot, np.flipud(np.rot90(rplot)), levels)
+plt.clabel(ct, fmt='%1.2f')
+plt.xlabel('x')
+plt.ylabel('time')
+plt.title('Density contours')
+plt.show()
